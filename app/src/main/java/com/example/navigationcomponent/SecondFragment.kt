@@ -24,7 +24,7 @@ class SecondFragment : Fragment() {
         Log.i("addff", title.toString())
 
         binding.thankYouTextView.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.navigateToFirst)
+//            Navigation.findNavController(view).navigate(R.id.navigateToFirst)
         }
 
         return view

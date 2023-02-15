@@ -1,16 +1,20 @@
 package com.example.navigationcomponent
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import com.example.navigationcomponent.databinding.FragmentFirstBinding
+import androidx.navigation.fragment.findNavController
+import com.example.navigationcomponent.databinding.ActivityHomeBinding
+import com.example.navigationcomponent.databinding.FragmentHomeBinding
 import com.example.navigationcomponent.databinding.FragmentLoginBinding
 
+
 class LoginFragment : Fragment() {
-    private lateinit var binding:FragmentLoginBinding
+    private lateinit var binding: FragmentLoginBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,7 +35,10 @@ class LoginFragment : Fragment() {
                 putString("email", binding.emailEditText.text.toString())
                 putString("password", binding.passwordEditText.text.toString())
             }
-            Navigation.findNavController(view).navigate(R.id.navigate_to_home, args)
+            //Go to another activity from this fragment
+            val intent = Intent(requireContext(), HomeActivity::class.java)
+            intent.putExtra("email", binding.emailEditText.text.toString())
+            requireActivity().startActivity(intent)
         }
     }
 }

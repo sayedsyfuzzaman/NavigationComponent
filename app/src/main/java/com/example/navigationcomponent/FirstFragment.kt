@@ -19,8 +19,6 @@ class FirstFragment : Fragment() {
     ): View? {
         binding = FragmentFirstBinding.inflate(inflater, container, false)
         val view = binding.root
-
-
         return view
     }
 
@@ -31,7 +29,7 @@ class FirstFragment : Fragment() {
             val args = Bundle().apply {
                 putString("myTitle", "Creators Policy")
             }
-            Navigation.findNavController(view).navigate(R.id.navigateToSecond, args)
+//            Navigation.findNavController(view).navigate(R.id.navigateToSecond, args)
         }
 
     }
