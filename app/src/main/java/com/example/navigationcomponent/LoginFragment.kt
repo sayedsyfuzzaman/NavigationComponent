@@ -37,7 +37,13 @@ class LoginFragment : Fragment() {
             }
             //Go to another activity from this fragment
             val intent = Intent(requireContext(), HomeActivity::class.java)
-            intent.putExtra("email", binding.emailEditText.text.toString())
+            var email = binding.emailEditText.text.toString()
+            var name = "Name"
+
+            if (email == "sayedsyfuzzaman@gmail.com"){
+                name = "Syfuzzaman"
+            }
+            intent.putExtra("name", name)
             requireActivity().startActivity(intent)
         }
     }

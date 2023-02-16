@@ -21,8 +21,8 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
-        var email = arguments?.getString("email")
-        binding.nameTextView.text = "Your email is "+email
+        var name = arguments?.getString("name")
+        binding.nameTextView.text = "Welcome, "+name
         return view
     }
 

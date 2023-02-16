@@ -12,8 +12,7 @@ class HomeActivity : AppCompatActivity() {
 
         val fragment = HomeFragment()
         val bundle = Bundle()
-        bundle.putString("email", intent.getStringExtra("email"))
-        Log.i("abcd", intent.getStringExtra("email").toString())
+        bundle.putString("name", intent.getStringExtra("name"))
         fragment.arguments = bundle
         supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView, fragment).commit()
 
