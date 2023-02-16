@@ -10,4 +10,9 @@
         android:name="com.example.navigationcomponent.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="com.example.navigationcomponent.ProductsFragment"
+        android:label="fragment_products"
+        tools:layout="@layout/fragment_products" />
 </navigation>
