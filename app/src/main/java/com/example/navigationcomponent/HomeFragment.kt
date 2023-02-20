@@ -1,20 +1,18 @@
 package com.example.navigationcomponent
 
-import android.content.Intent.getIntent
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import android.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.navigationcomponent.databinding.FragmentHomeBinding
-import com.example.navigationcomponent.databinding.FragmentSecondBinding
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding:FragmentHomeBinding
-
+    private lateinit var toolbar: Toolbar
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,7 +21,18 @@ class HomeFragment : Fragment() {
         val view = binding.root
         var name = arguments?.getString("name")
         binding.nameTextView.text = "Welcome, "+name
+
+
+//        val toolbar = requireActivity().findViewById<Toolbar>(R.id.toolbar)
+//        val tools= activity!!.findViewById<Toolbar>(R.id.toolbar)
+//        toolbar.setTitle("Hello")
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Home"
     }
 
 }
